@@ -1,4 +1,4 @@
-![Build status]https://github.com/florind/kafka-streams-protobuf-kotlin/workflows/CI/badge.svg
+![Build status](https://github.com/florind/kafka-streams-protobuf-kotlin/workflows/CI/badge.svg)
 
 ## Kafka Streams with Protobuf in Kotlin
 
