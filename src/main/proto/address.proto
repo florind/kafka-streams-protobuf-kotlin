@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_package = "net.metaflow.models";
+option java_outer_classname = "Protos";
+
+message City {
+  int64 id = 1;
+  string name = 2;
+  string adminName = 3;
+  Coordinates coordinates = 4;
+  string capital = 5;
+  string countryIso2 = 6;
+  int32 population = 7;
+}
+
+message Coordinates {
+  double lat = 1;
+  double lon = 2;
+}
