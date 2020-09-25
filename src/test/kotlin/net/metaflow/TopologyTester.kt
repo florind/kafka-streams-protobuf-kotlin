@@ -15,7 +15,7 @@ import org.apache.kafka.clients.producer.Producer
 import org.apache.kafka.common.serialization.LongSerializer
 import org.apache.kafka.common.serialization.StringDeserializer
 import org.awaitility.Awaitility
-import org.junit.jupiter.api.BeforeEach
+import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.Test
 import org.testcontainers.containers.KafkaContainer
 import java.time.Duration
@@ -38,11 +38,13 @@ class TopologyTester {
             KafkaProducer(
                 Application().getStreamsConfig(kafkaContainer.bootstrapServers),
                 LongSerializer(), KafkaProtobufSerializer())
-    }
 
-    @BeforeEach
-    fun init() {
-        TopologyLogic().topologyInit(kafkaContainer.bootstrapServers)
+        @BeforeAll
+        @JvmStatic
+        fun init() {
+            TopologyLogic().topologyInit(kafkaContainer.bootstrapServers)
+        }
+
     }
 
     @Test
